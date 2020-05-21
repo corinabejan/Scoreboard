@@ -24,11 +24,9 @@ export default function ScoreBoard() {
   };
 
   function createPlayer(name) {
-    console.log("HELLO AM I BEING CALLED?? AND WHAT IS NAME", name);
-    const newPlayer = { name: name, score: 0, id: players.length + 1 };
+    const newPlayer = { id: players.length + 1, name: name, score: 0,  };
 
     const newPlayers = [...players, newPlayer];
-    console.log(newPlayers);
     set_players(newPlayers);
   }
 
@@ -56,16 +54,16 @@ export default function ScoreBoard() {
           <option value="score">Sort by name</option>
         </select>
       </p>
-      <AddPlayer createPlayer={createPlayer} />
       {players.map((player) => (
         <Player
-          key={player.id}
-          id={player.id}
-          name={player.name}
-          score={player.score}
-          incrementScore={incrementScore}
+        key={player.id}
+        id={player.id}
+        name={player.name}
+        score={player.score}
+        incrementScore={incrementScore}
         />
-      ))}
+        ))}
+        <AddPlayer createPlayer={createPlayer} />
     </div>
   );
 }

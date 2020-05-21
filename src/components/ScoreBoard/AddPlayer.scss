@@ -1,0 +1,10 @@
+@import "../../styles/_config";
+
+label {
+  margin-right: 5px;
+}
+
+button:hover {
+  color: red;
+  cursor: pointer;
+}
